@@ -52,13 +52,13 @@ func _Block(md *digest, p []byte) int {
 		for i < 16 {
 			alpha = a + (b ^ c ^ d) + x[_n[i]]
 			s := _r[i]
-			alpha = (alpha<<s | alpha>>(32-s))
+			alpha = alpha<<s | alpha>>(32-s)
 			a, b, c, d = d, alpha, b, c
 
 			// parallel line
 			alpha = aa + (bb&dd | cc&^dd) + x[n_[i]] + 0x50a28be6
 			s = r_[i]
-			alpha = (alpha<<s | alpha>>(32-s))
+			alpha = alpha<<s | alpha>>(32-s)
 			aa, bb, cc, dd = dd, alpha, bb, cc
 
 			i++
@@ -68,13 +68,13 @@ func _Block(md *digest, p []byte) int {
 		for i < 32 {
 			alpha = a + (b&c | ^b&d) + x[_n[i]] + 0x5a827999
 			s := _r[i]
-			alpha = (alpha<<s | alpha>>(32-s))
+			alpha = alpha<<s | alpha>>(32-s)
 			a, b, c, d = d, alpha, b, c
 
 			// parallel line
 			alpha = aa + (bb | ^cc ^ dd) + x[n_[i]] + 0x5c4dd124
 			s = r_[i]
-			alpha = (alpha<<s | alpha>>(32-s))
+			alpha = alpha<<s | alpha>>(32-s)
 			aa, bb, cc, dd = dd, alpha, bb, cc
 
 			i++
@@ -84,13 +84,13 @@ func _Block(md *digest, p []byte) int {
 		for i < 48 {
 			alpha = a + (b | ^c ^ d) + x[_n[i]] + 0x6ed9eba1
 			s := _r[i]
-			alpha = (alpha<<s | alpha>>(32-s))
+			alpha = alpha<<s | alpha>>(32-s)
 			a, b, c, d = d, alpha, b, c
 
 			// parallel line
 			alpha = aa + (bb&cc | ^bb&dd) + x[n_[i]] + 0x6d703ef3
 			s = r_[i]
-			alpha = (alpha<<s | alpha>>(32-s))
+			alpha = alpha<<s | alpha>>(32-s)
 			aa, bb, cc, dd = dd, alpha, bb, cc
 
 			i++
@@ -100,13 +100,13 @@ func _Block(md *digest, p []byte) int {
 		for i < 64 {
 			alpha = a + (b&d | c&^d) + x[_n[i]] + 0x8f1bbcdc
 			s := _r[i]
-			alpha = (alpha<<s | alpha>>(32-s))
+			alpha = alpha<<s | alpha>>(32-s)
 			a, b, c, d = d, alpha, b, c
 
 			// parallel line
 			alpha = aa + (bb ^ cc ^ dd) + x[n_[i]]
 			s = r_[i]
-			alpha = (alpha<<s | alpha>>(32-s))
+			alpha = alpha<<s | alpha>>(32-s)
 			aa, bb, cc, dd = dd, alpha, bb, cc
 
 			i++
