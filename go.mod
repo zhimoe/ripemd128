@@ -1,3 +1,3 @@
-module github.com/cod3fn/ripemd128
+module github.com/zhimoe/ripemd128
 
 go 1.14
